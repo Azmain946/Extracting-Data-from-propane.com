@@ -16,12 +16,13 @@ driver.get(url)
 time.sleep(3)
 
 value=input("Enter any of them(8000/16000/32000/80000/160000) for 5miles/10miles/20/miles/50miles/100miles: ")
-# driver.find_element_by_xpath('//*[@id="cookie-consent"]/div/div/button/span').click()
+zip_code=input()
+
 driver.find_element(By.XPATH, '//*[@id="cookie-consent"]/div/div/button/span').click()
 time.sleep(1)
 
 searchBox=driver.find_element(By.XPATH, '//*[@id="locator-map-supplier"]/section/div/form/div/input')
-searchBox.send_keys('10001')
+searchBox.send_keys(zip_code)
 time.sleep(1)
 
 dropdown=driver.find_element(By.XPATH, '//option[@value='+value+']').click()
